@@ -9,15 +9,6 @@
     }
 }
 
-@keyframes moveStripes {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0  100%;
-    }
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
@@ -28,6 +19,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+@keyframes moveStripes {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        /* Movemos exactamente el ancho del background-size (85px) */
+        /* Si quieres que se mueva hacia el otro lado, usa -85px */
+        background-position: 85px 0; 
+    }
 }
 
 .construction-bar {
@@ -41,8 +43,11 @@ body {
         #000 60px
     );
     opacity: 0.5;
-    background-size: 85px 85px;
-    animation: moveStripes 15s linear infinite;
+    /* Mantenemos un tamaño fijo */
+    background-size: 85px 85px; 
+    /* Bajamos el tiempo a 2s o 3s para que se aprecie la fluidez, 
+       15s es muy lento y a veces el ojo nota microsaltos */
+    animation: moveStripes 7.5s linear infinite;
 }
 
 .main-content {
@@ -62,7 +67,7 @@ h1 {
     margin: 0 0 20px 0;
 }
 
-img {
+.main-content img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -83,4 +88,27 @@ a {
     
 a:hover {
     text-decoration: underline;
+}
+
+/* Redondear el contenedor principal */
+.gt_switcher_wrapper {
+    border-radius: 15px !important;
+    overflow: hidden !important; /* Crucial para que el contenido no tape las esquinas */
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2) !important;
+    border: none !important;
+    margin-top: 10px !important;
+}
+
+/* Redondear las banderas/opciones individuales */
+.gt_option {
+    border-radius: 0 !important; /* Es mejor que sean rectas dentro del contenedor redondeado */
+}
+
+.gt_option:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/* Ajuste para las imágenes de las banderas */
+.gt_switcher_wrapper img {
+    border-radius: 4px !important; /* Un redondeado leve a las banderas queda más moderno */
 }
