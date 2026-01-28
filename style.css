@@ -70,12 +70,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
+.main-content p {
     animation: fadeInScale 0.8s ease-out 0.4s backwards;
     margin: 0;
 }
 
-a {
+.main-content a {
     color: #ff3333;
     font-weight: bold;
     text-decoration: none;
@@ -84,7 +84,7 @@ a {
     transition: color 0.2s ease-out, scale 0.2s ease-out;
 }
 
-a::after {
+.main-content a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -97,11 +97,11 @@ a::after {
     transition: transform 0.3s ease-out;
 }
 
-a:hover {
+.main-content a:hover {
     font-size: 102%;
 }
 
-a:hover::after {
+.main-content a:hover::after {
     transform: scaleX(1);
 }
 
@@ -122,5 +122,15 @@ a:hover::after {
 }
 
 .gt_switcher_wrapper img {
-    border-radius: 4px !important; /* Un redondeado leve a las banderas queda más moderno */
+    border-radius: 4px !important;
+}
+
+.gt_switcher_wrapper a::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+.gt_switcher_wrapper a:hover::after {
+    transform: scaleX(1);
 }
