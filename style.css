@@ -125,12 +125,12 @@ h1 {
     border-radius: 4px !important;
 }
 
-.gt_switcher_wrapper a::after {
+.gt_switcher_wrapper a {
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: center;
     transition: transform 0.3s ease-out;
 }
 
-.gt_switcher_wrapper a:hover::after {
+.gt_switcher_wrapper a:hover {
     transform: scaleX(1);
 }
