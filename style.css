@@ -84,10 +84,14 @@ a {
     color: rgb(12, 105, 105);
     font-weight: bold;
     text-decoration: none;
+    transition: all 0.1s ease-out;
 }
     
 a:hover {
     text-decoration: underline;
+    text-decoration-style: double;
+    scale: 1.02;
+    font-weight: bolder;
 }
 
 /* Redondear el contenedor principal */
